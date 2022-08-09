@@ -27,6 +27,7 @@ namespace ParserTest
         public static Excel._Workbook OpenDocument(bool isVisible) 
         {
             var excelApp = new Excel.Application();
+            excelApp.DisplayAlerts = false;
             excelApp.Visible = isVisible;
             var book = excelApp.Workbooks.Open(Path.GetFullPath("../../../ExcelAndKeys/Result"), ReadOnly: false);
             return book;
